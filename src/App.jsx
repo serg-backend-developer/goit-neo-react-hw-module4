@@ -18,24 +18,6 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [params, setParams] = useState({});
 
-  const searchHandler = async searchData => {
-    setCards([]);
-    setPage(1);
-    setErrorMessage(false);
-    setLoader(true);
-
-    try {
-      console.log(searchData)
-      setCards(await fetchSearch({ searchData }));
-      setSearchData(searchData);
-    } catch (error) {
-      setErrorMessage(true);
-      console.log(error)
-    } finally {
-      setLoader(false);
-    }
-  };
-
   const loaderHandler = async () => {
     setLoader(true);
     const nextPage = page + 1;
@@ -58,6 +40,24 @@ const App = () => {
   const onOpenModal = data => {
     setIsOpen(true);
     setParams(data);
+  };
+
+  const searchHandler = async searchData => {
+    setCards([]);
+    setPage(1);
+    setErrorMessage(false);
+    setLoader(true);
+
+    try {
+      console.log(searchData)
+      setCards(await fetchSearch({ searchData }));
+      setSearchData(searchData);
+    } catch (error) {
+      setErrorMessage(true);
+      console.log(error)
+    } finally {
+      setLoader(false);
+    }
   };
 
   return (
