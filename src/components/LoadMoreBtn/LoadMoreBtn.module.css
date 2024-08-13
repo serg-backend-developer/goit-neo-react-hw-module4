@@ -5,10 +5,12 @@
 }
 
 .loadMoreBtn {
+	width: 20%;
 	padding: 10px 20px;
-	background-color: #465df3;
+	background-color: #1a1aff;
 	color: white;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+	font-size: 15px;
 }
